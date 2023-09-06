@@ -1,0 +1,31 @@
+<!--
+  @description       : HTML for File Upload 
+  @author            : Shubham Raut
+  @group             : 
+  @last modified on  : 09-05-2023
+  @last modified by  : Shubham Raut
+  Modifications Log
+  Ver   Date         Author         Modification
+  1.0   09-05-2023   Shubham Raut   Initial Version
+-->
+<template>
+    <lightning-card title="File Upload" icon-name="custom:custom14">
+        <lightning-file-upload 
+        label="Insert File"
+        name="uploadfile"
+        accept={acceptedFormats}
+        onuploadfinished={handleUploadFinished}
+        record-id={recordId}
+        multiple>
+
+        </lightning-file-upload>
+    </lightning-card>
+
+    <lightning-card title="Related Files">
+        <lightning-datatable 
+            key-field="file.Id"
+            columns={columns}
+            data={fileList}>
+        </lightning-datatable>
+    </lightning-card>
+</template>
